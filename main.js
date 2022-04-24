@@ -1,5 +1,5 @@
 
-let list = [5, 9, 4, 1];
+let list = [9, 5, 1, 7, 6, 2, 0, 8, 4, 3];
 // list=[5, 9, 4, 1]; i=0, j=1 => list[i]=5; list[j]=9
 // list=[5, 9, 4, 1]; i=0, j=2 => list[i]=5; list[j]=4
 // list=[4, 9, 5, 1]; i=0, j=3 => list[i]=4; list[j]=1
@@ -14,6 +14,11 @@ function sort(list) {
   for (let i = 0; i < list.length - 1; i++) {
     for (let j = i + 1; j < list.length; j++) {
       // TODO
+      if (list[j] < list[i]) {
+        let tmp = list[i];
+        list[i] = list[j];
+        list[j] = tmp;
+      }
     }
   }
 }
@@ -24,4 +29,7 @@ function print(list) {
   }
 }
 
-print(list);
+// print(list);
+
+sort(list);
+console.log(list);
